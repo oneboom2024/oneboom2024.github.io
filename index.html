@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OneBoom Media | Digital Innovation & Marketing</title>
     <style>
-        /* --- 全局设置 --- */
+        /* --- 全局配色变量 (保持你喜欢的黄+橙) --- */
         :root {
-            /* 核心修改：改为橙色和黄色体系 */
-            --primary-color: #FF9500; /* iOS System Orange */
-            --secondary-color: #FFD60A; /* iOS System Yellow */
-            --gradient-btn: linear-gradient(135deg, #FF9500, #FFCC00); /* 橙黄渐变 */
-            --warm-bg: #FFF9E6; /* 极淡的暖黄色背景 */
+            --primary-orange: #FF8800;
+            --primary-yellow: #FFCC00;
+            --warm-dark: #4A3B32;
             
-            --dark-bg: #1c1c1e;
-            --light-bg: #f5f5f7;
-            --white: #ffffff;
+            --bg-hero: linear-gradient(135deg, #FF9500 0%, #FFD60A 100%);
+            --bg-cream: #FFFDF5;
+            --bg-pale-orange: #FFF8E1;
+            --bg-dark-footer: #2D241E;
+
+            --text-on-dark: #FFFFFF;
             --text-main: #333333;
-            --text-light: #86868b;
+            --text-sub: #666666;
         }
         
         * {
@@ -30,6 +31,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-main);
+            background-color: var(--bg-cream);
             scroll-behavior: smooth;
         }
 
@@ -42,7 +44,7 @@
             top: 0;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(255, 149, 0, 0.1);
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
@@ -53,7 +55,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 800;
-            color: #000;
+            color: var(--primary-orange);
             letter-spacing: -0.5px;
         }
 
@@ -65,8 +67,7 @@
             transition: color 0.3s;
         }
         
-        /* 导航悬停变为橙色 */
-        .nav-links a:hover { color: var(--primary-color); }
+        .nav-links a:hover { color: var(--primary-orange); }
 
         /* --- 通用容器 --- */
         .container {
@@ -79,80 +80,75 @@
             font-size: 2.5rem;
             margin-bottom: 40px;
             text-align: center;
-            font-weight: 700;
+            font-weight: 800;
+            color: var(--warm-dark);
         }
 
-        /* --- 1. Hero 区域 (深色背景) --- */
+        /* --- 1. Hero 区域 --- */
         #home {
-            background-color: var(--dark-bg);
-            color: var(--white);
+            background: var(--bg-hero);
+            color: var(--text-on-dark);
             text-align: center;
-            padding: 140px 20px;
+            padding: 160px 20px 140px;
         }
 
         #home h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             margin-bottom: 20px;
-            /* 标题加一点微弱的暖色光泽 */
-            background: linear-gradient(90deg, #ffffff, #FFEBAA);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-weight: 800;
         }
 
         #home .subtitle {
-            font-size: 1.2rem;
-            color: #a1a1a6;
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.95);
             max-width: 700px;
             margin: 0 auto 40px;
+            font-weight: 500;
         }
 
         .cta-button {
             display: inline-block;
-            background: var(--gradient-btn); /* 使用渐变 */
-            color: white; /* 这里用白色文字 */
-            padding: 14px 35px;
+            background-color: white;
+            color: var(--primary-orange);
+            padding: 15px 40px;
             border-radius: 30px;
             font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(255, 149, 0, 0.4); /* 橙色光晕 */
-            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
         
         .cta-button:hover { 
             transform: scale(1.05); 
-            box-shadow: 0 6px 20px rgba(255, 149, 0, 0.6);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
 
-        /* --- 2. 关于我们 (白色背景) --- */
-        #about {
-            background-color: var(--white);
-        }
+        /* --- 2. 关于我们 --- */
+        #about { background-color: #FFFFFF; }
 
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
-            align-items: center;
+            align-items: start;
         }
 
         .about-text p { margin-bottom: 20px; color: #555; }
         
         .about-highlight {
-            background: var(--warm-bg); /* 改为暖黄色背景 */
+            background: var(--bg-pale-orange);
             padding: 30px;
             border-radius: 20px;
-            border-left: 5px solid var(--primary-color); /* 橙色边框 */
+            border-left: 5px solid var(--primary-orange);
         }
         
         .about-highlight h3 {
-            color: #000;
+            color: var(--primary-orange);
             margin-bottom: 10px;
         }
 
-        /* --- 3. 服务项目 (浅灰背景) --- */
-        #services {
-            background-color: var(--light-bg);
-        }
+        /* --- 3. 服务项目 --- */
+        #services { background-color: var(--bg-cream); }
 
         .services-grid {
             display: grid;
@@ -164,76 +160,115 @@
             background: white;
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 20px rgba(255, 149, 0, 0.08);
             transition: transform 0.3s;
-            border-top: 3px solid transparent;
+            border-top: 4px solid transparent;
         }
 
-        /* 悬停时卡片顶部出现橙色线条 */
         .service-card:hover { 
             transform: translateY(-5px); 
-            border-top: 3px solid var(--primary-color);
+            border-top: 4px solid var(--primary-yellow);
         }
         
-        .service-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: #000; }
+        .service-card h3 { 
+            font-size: 1.4rem; 
+            margin-bottom: 15px; 
+            color: var(--warm-dark); 
+        }
         
         .service-card ul li {
             margin-bottom: 10px;
             font-size: 0.95rem;
-            color: #555;
-            position: relative;
+            color: #666;
             padding-left: 20px;
+            position: relative;
         }
+        
         .service-card ul li::before {
             content: "•";
-            color: var(--primary-color); /* 橙色圆点 */
+            color: var(--primary-orange);
             position: absolute;
             left: 0;
             font-weight: bold;
             font-size: 1.2em;
         }
 
-        /* --- 4. 隐私政策 (深色背景) --- */
+        /* --- 4. 隐私政策 (严格原文还原) --- */
         #privacy {
-            background-color: #151516;
+            background-color: var(--bg-dark-footer);
             color: #d1d1d1;
         }
 
         #privacy h2 { color: white; }
         
         .policy-content {
-            background: rgba(255,255,255,0.03);
-            padding: 40px;
+            background: rgba(255,255,255,0.05);
+            padding: 50px;
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            text-align: left; /* 保持左对齐，严谨 */
         }
 
-        .policy-block { margin-bottom: 30px; }
-        .policy-block h3 { color: var(--primary-color); margin-bottom: 10px; } /* 标题改为橙色 */
-        .policy-block h4 { color: white; margin: 15px 0 5px; font-size: 1rem; }
-        .policy-block p, .policy-block li { font-size: 0.95rem; opacity: 0.9; }
-        .policy-block ul { margin-left: 20px; margin-top: 5px; list-style-type: disc; }
+        /* 隐私政策文本样式 */
+        .policy-text {
+            color: #e0e0e0;
+            margin-bottom: 25px;
+        }
         
-        /* 隐私政策里的加粗强调 */
-        strong { color: var(--white); }
+        .policy-section-title {
+            color: var(--primary-yellow);
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .policy-subsection {
+            color: white;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .policy-list {
+            list-style-type: none; /* 去掉默认圆点，因为Word里可能有自己的格式，这里保持简洁 */
+            margin-left: 0;
+        }
+        
+        .policy-list li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .policy-list li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: var(--primary-orange);
+        }
 
         /* --- Footer --- */
         footer {
-            background-color: #000;
-            color: #666;
+            background-color: #1a1512;
+            color: #888;
             text-align: center;
             padding: 40px 20px;
             font-size: 0.85rem;
         }
         
-        footer a { color: var(--primary-color); }
+        footer a { color: var(--primary-orange); }
 
         /* --- 移动端适配 --- */
         @media (max-width: 768px) {
+            #home { padding: 120px 20px 100px; }
             #home h1 { font-size: 2.5rem; }
             .about-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
             .container { padding: 60px 20px; }
+            .policy-content { padding: 25px; }
         }
     </style>
 </head>
@@ -244,15 +279,15 @@
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#services">Services</a>
-            <a href="#privacy">Privacy</a>
-            <a href="mailto:kuma@oneboom.vip" style="color:var(--primary-color)">Contact Us</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="mailto:kuma@oneboom.vip" style="color:var(--primary-orange)">Contact Us</a>
         </div>
     </nav>
 
     <section id="home">
         <div class="container">
             <h1>Innovative Digital Solutions</h1>
-            <p class="subtitle">Integrating product development and marketing strategy to deliver high-quality digital experiences to users worldwide.</p>
+            <p class="subtitle">Integrating product development and marketing strategy to deliver high-quality digital products and services to users worldwide.</p>
             <a href="#services" class="cta-button">Explore Services</a>
         </div>
     </section>
@@ -264,10 +299,12 @@
                 <div class="about-text">
                     <p>Oneboom is an innovative internet company that integrates product development and marketing strategy. We are dedicated to delivering high-quality digital products and services to users worldwide.</p>
                     <p>By combining exceptional product experiences with precise marketing strategies, we strive to provide maximum value to our users.</p>
+                    <p>We believe that outstanding products are built on meticulous attention to detail, and successful marketing relies on precise data insights.</p>
                 </div>
                 <div class="about-highlight">
                     <h3>Our Team</h3>
-                    <p>Our team members come from diverse backgrounds including internet, advertising, and marketing industries. We specialize in combining innovative thinking with data analysis to help clients achieve rapid market breakthroughs.</p>
+                    <p>Our team members come from diverse backgrounds including internet, advertising, and marketing industries, with extensive project experience and deep industry expertise.</p>
+                    <p style="margin-top:15px;">Our core team has years of experience, having led the development and promotion of several well-known products. We specialize in combining innovative thinking with data analysis to help clients achieve rapid market breakthroughs.</p>
                 </div>
             </div>
         </div>
@@ -278,29 +315,29 @@
             <h2>Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Product Development</h3>
+                    <h3>1. Product Development</h3>
                     <ul>
-                        <li>Mobile App Design & Development (iOS / Android)</li>
-                        <li>Web Application & Website Development</li>
-                        <li>Data Analysis & System Optimization</li>
-                        <li>User Experience-Driven Design</li>
+                        <li>Design and development of mobile applications (iOS / Android)</li>
+                        <li>Web application and website development</li>
+                        <li>Data analysis and system optimization</li>
+                        <li>User experience-driven product design and iteration</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Marketing Strategy</h3>
+                    <h3>2. Marketing Strategy</h3>
                     <ul>
-                        <li>Integrated Marketing Strategy Development</li>
-                        <li>Brand Positioning & Visual Design</li>
-                        <li>Social Media Management & Ad Optimization</li>
-                        <li>Multi-channel Promotion & Growth Hacking</li>
+                        <li>Integrated marketing strategy development</li>
+                        <li>Brand positioning and visual design</li>
+                        <li>Social media management and ad optimization</li>
+                        <li>Multi-channel promotion and growth hacking strategies</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>App Submission Services</h3>
+                    <h3>3. App Submission Services</h3>
                     <ul>
-                        <li>iOS App Store Submission Support</li>
-                        <li>Google Play Optimization</li>
-                        <li>App Marketplace Promotion Strategies</li>
+                        <li>Guidance and technical support for iOS App Store submission</li>
+                        <li>Optimization for Google Play submission</li>
+                        <li>App marketplace promotion strategies and execution</li>
                     </ul>
                 </div>
             </div>
@@ -311,45 +348,25 @@
         <div class="container">
             <h2>Privacy Policy</h2>
             <div class="policy-content">
-                <p style="margin-bottom: 20px;">Oneboom respects and protects your personal privacy. This Privacy Policy applies to our mobile applications, including <strong>Fast Cleanup: Storage Cleaner</strong> and our <strong>Heart Rate</strong> monitoring products.</p>
+                <p class="policy-text">Oneboom respects and protects your personal privacy. This Privacy Policy applies to our mobile applications, including <strong>Fast Cleanup: Storage Cleaner</strong> and our <strong>Heart Rate</strong> monitoring products.</p>
                 
-                <div class="policy-block">
-                    <h3>1. Data Access & Usage</h3>
-                    <h4>For Fast Cleanup Users:</h4>
-                    <ul>
-                        <li><strong>Photo Library:</strong> Accessed solely to scan for duplicates/large files locally.</li>
-                        <li><strong>Contacts:</strong> Accessed only to identify and merge duplicate entries.</li>
-                        <li><strong>Biometric Data:</strong> Uses system-level Face ID/Touch ID locally. We do not store biometric data.</li>
-                    </ul>
-                    <h4>For Heart Rate Product Users:</h4>
-                    <ul>
-                        <li><strong>Health Data (HealthKit):</strong> Access to read/write heart rate data for historical trends.</li>
-                        <li><strong>Camera Access:</strong> Used to detect blood flow changes for calculation.</li>
-                    </ul>
-                </div>
+                <p class="policy-text">We adhere to the following principles:</p> <div class="policy-section-title">1. DATA ACCESS AND USAGE</div> <p class="policy-text">Depending on the specific features of the App you are using, we may require access to certain data after you grant explicit permission:</p>
 
-                <div class="policy-block">
-                    <h3>2. On-Device Processing</h3>
-                    <p>Most core functions are performed locally on your device. We utilize Apple's Data Protection technology. <strong>We do not upload your private photos, contacts, or health data to our servers.</strong></p>
-                </div>
+                <span class="policy-subsection">For Fast Cleanup Users:</span> <ul class="policy-list">
+                    <li><strong>Photo Library:</strong> We access photos and videos solely to scan for duplicates and large files to help you optimize storage.</li> <li><strong>Contacts:</strong> We access your contact list only to identify and merge duplicate entries.</li> <li><strong>Biometric Data:</strong> We use system-level Face ID/Touch ID for the "Private Vault" feature. We do not store or access your actual biometric data.</li> </ul>
 
-                <div class="policy-block">
-                    <h3>3. Information Sharing</h3>
-                    <p>We do not sell, rent, or disclose your personal information or health-related data to any third party. Your data is never used for advertising purposes.</p>
-                </div>
+                <span class="policy-subsection" style="margin-top: 20px;">For Heart Rate Product Users:</span> <ul class="policy-list">
+                    <li><strong>Health Data (HealthKit):</strong> We may access or write heart rate data to the Apple Health App to provide you with historical health trends.</li> <li><strong>Camera Access:</strong> We use the camera and flash to detect blood flow changes in your fingertip to calculate your heart rate.</li> </ul>
 
-                <div class="policy-block">
-                    <h3>Contact Us</h3>
-                    <p>If you have questions about our privacy policy, please contact us at:</p>
-                    <a href="mailto:kuma@oneboom.vip" style="color: #FF9500; font-weight:bold; font-size: 1.1em;">kuma@oneboom.vip</a>
-                </div>
-            </div>
+                <div class="policy-section-title">2. ON-DEVICE PROCESSING & SECURITY</div> <ul class="policy-list">
+                    <li><strong>Local Processing:</strong> Most core functions, such as photo scanning and heart rate calculation, are performed locally on your device.</li> <li><strong>Data Protection:</strong> We utilize Apple's Data Protection technology to ensure that all sensitive data remains encrypted and secure.</li> <li><strong>No Server Uploads:</strong> We do not upload your private photos, contacts, or health data to our servers. Your data stays on your device.</li> </ul>
+
+                <div class="policy-section-title">3. INFORMATION SHARING</div> <p class="policy-text">We do not sell, rent, or disclose your personal information or health-related data to any third party.</p> <p class="policy-text">Your data is never used for advertising or data harvesting purposes.</p> <div class="policy-section-title">4. DATA SECURITY</div> <p class="policy-text">We implement strict security measures and utilize the latest iOS security frameworks to ensure your information is not accessed, used, or disclosed unlawfully.</p> <div class="policy-section-title">5. CONTACT US</div> <p class="policy-text">If you have any questions about our privacy policy, please contact us via the details below.</p> <a href="mailto:kuma@oneboom.vip" style="color: #FFCC00; font-weight:bold; font-size: 1.1rem; text-decoration: underline;">kuma@oneboom.vip</a> </div>
         </div>
     </section>
 
     <footer>
-        <p>Oneboom Media Limited &copy; 2025 Oneboom Inc. All rights reserved.</p>
-    </footer>
+        <p>Oneboom Media Limited &copy; 2025 Oneboom Inc</p> </footer>
 
 </body>
 </html>
