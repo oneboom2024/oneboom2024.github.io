@@ -7,7 +7,12 @@
     <style>
         /* --- 全局设置 --- */
         :root {
-            --primary-color: #007AFF; /* iOS Blue */
+            /* 核心修改：改为橙色和黄色体系 */
+            --primary-color: #FF9500; /* iOS System Orange */
+            --secondary-color: #FFD60A; /* iOS System Yellow */
+            --gradient-btn: linear-gradient(135deg, #FF9500, #FFCC00); /* 橙黄渐变 */
+            --warm-bg: #FFF9E6; /* 极淡的暖黄色背景 */
+            
             --dark-bg: #1c1c1e;
             --light-bg: #f5f5f7;
             --white: #ffffff;
@@ -37,7 +42,7 @@
             top: 0;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
@@ -49,16 +54,18 @@
             font-size: 1.5rem;
             font-weight: 800;
             color: #000;
+            letter-spacing: -0.5px;
         }
 
         .nav-links a {
             margin-left: 20px;
             font-size: 0.9rem;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--text-main);
             transition: color 0.3s;
         }
         
+        /* 导航悬停变为橙色 */
         .nav-links a:hover { color: var(--primary-color); }
 
         /* --- 通用容器 --- */
@@ -80,13 +87,14 @@
             background-color: var(--dark-bg);
             color: var(--white);
             text-align: center;
-            padding: 120px 20px;
+            padding: 140px 20px;
         }
 
         #home h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, #fff, #888);
+            /* 标题加一点微弱的暖色光泽 */
+            background: linear-gradient(90deg, #ffffff, #FFEBAA);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -100,15 +108,20 @@
 
         .cta-button {
             display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: transform 0.2s;
+            background: var(--gradient-btn); /* 使用渐变 */
+            color: white; /* 这里用白色文字 */
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 149, 0, 0.4); /* 橙色光晕 */
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
         
-        .cta-button:hover { transform: scale(1.05); }
+        .cta-button:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 6px 20px rgba(255, 149, 0, 0.6);
+        }
 
         /* --- 2. 关于我们 (白色背景) --- */
         #about {
@@ -125,10 +138,15 @@
         .about-text p { margin-bottom: 20px; color: #555; }
         
         .about-highlight {
-            background: #f0f8ff;
+            background: var(--warm-bg); /* 改为暖黄色背景 */
             padding: 30px;
             border-radius: 20px;
-            border-left: 5px solid var(--primary-color);
+            border-left: 5px solid var(--primary-color); /* 橙色边框 */
+        }
+        
+        .about-highlight h3 {
+            color: #000;
+            margin-bottom: 10px;
         }
 
         /* --- 3. 服务项目 (浅灰背景) --- */
@@ -146,12 +164,19 @@
             background: white;
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
             transition: transform 0.3s;
+            border-top: 3px solid transparent;
         }
 
-        .service-card:hover { transform: translateY(-5px); }
+        /* 悬停时卡片顶部出现橙色线条 */
+        .service-card:hover { 
+            transform: translateY(-5px); 
+            border-top: 3px solid var(--primary-color);
+        }
+        
         .service-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: #000; }
+        
         .service-card ul li {
             margin-bottom: 10px;
             font-size: 0.95rem;
@@ -161,39 +186,44 @@
         }
         .service-card ul li::before {
             content: "•";
-            color: var(--primary-color);
+            color: var(--primary-color); /* 橙色圆点 */
             position: absolute;
             left: 0;
             font-weight: bold;
+            font-size: 1.2em;
         }
 
         /* --- 4. 隐私政策 (深色背景) --- */
         #privacy {
-            background-color: #2c2c2e;
+            background-color: #151516;
             color: #d1d1d1;
         }
 
         #privacy h2 { color: white; }
         
         .policy-content {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.03);
             padding: 40px;
             border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .policy-block { margin-bottom: 30px; }
-        .policy-block h3 { color: var(--primary-color); margin-bottom: 10px; }
+        .policy-block h3 { color: var(--primary-color); margin-bottom: 10px; } /* 标题改为橙色 */
         .policy-block h4 { color: white; margin: 15px 0 5px; font-size: 1rem; }
         .policy-block p, .policy-block li { font-size: 0.95rem; opacity: 0.9; }
         .policy-block ul { margin-left: 20px; margin-top: 5px; list-style-type: disc; }
+        
+        /* 隐私政策里的加粗强调 */
+        strong { color: var(--white); }
 
         /* --- Footer --- */
         footer {
             background-color: #000;
-            color: #888;
+            color: #666;
             text-align: center;
             padding: 40px 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         footer a { color: var(--primary-color); }
@@ -202,7 +232,7 @@
         @media (max-width: 768px) {
             #home h1 { font-size: 2.5rem; }
             .about-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; } /* 简单处理：移动端隐藏菜单，点击Logo回顶 */
+            .nav-links { display: none; }
             .container { padding: 60px 20px; }
         }
     </style>
@@ -311,7 +341,7 @@
                 <div class="policy-block">
                     <h3>Contact Us</h3>
                     <p>If you have questions about our privacy policy, please contact us at:</p>
-                    <a href="mailto:kuma@oneboom.vip" style="color: #007AFF; font-weight:bold;">kuma@oneboom.vip</a>
+                    <a href="mailto:kuma@oneboom.vip" style="color: #FF9500; font-weight:bold; font-size: 1.1em;">kuma@oneboom.vip</a>
                 </div>
             </div>
         </div>
