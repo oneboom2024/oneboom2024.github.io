@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OneBoom Media | Digital Innovation & Marketing</title>
+    <title>ONEBOOM MEDIA LIMITED | Mobile App Developer</title>
+    <meta name="description" content="ONEBOOM MEDIA LIMITED develops and operates mobile applications including AI Pulse, Fast Cleanup, and CoinWorth.">
     <style>
         /* --- 全局配色变量 (保持你喜欢的黄+橙) --- */
         :root {
@@ -147,8 +148,15 @@
             margin-bottom: 10px;
         }
 
-        /* --- 3. 服务项目 --- */
+        /* --- 3. 自研产品 --- */
         #services { background-color: var(--bg-cream); }
+
+        .section-intro {
+            max-width: 760px;
+            margin: -20px auto 40px;
+            text-align: center;
+            color: var(--text-sub);
+        }
 
         .services-grid {
             display: grid;
@@ -193,7 +201,76 @@
             font-size: 1.2em;
         }
 
-        /* --- 4. 隐私政策 (严格原文还原) --- */
+        .product-icon {
+            width: 54px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #FF9500 0%, #FFD60A 100%);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(255, 149, 0, 0.22);
+        }
+
+        .product-tagline {
+            min-height: 72px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-orange);
+            font-weight: 700;
+            border-bottom: 2px solid rgba(255, 136, 0, 0.3);
+            padding-bottom: 3px;
+        }
+
+        .developer-link-wrap {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        /* --- 4. Google Ads API 数据平台说明 --- */
+        #analytics { background-color: white; }
+
+        .analytics-panel {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 45px;
+            border-radius: 24px;
+            background: var(--bg-pale-orange);
+            border: 1px solid rgba(255, 136, 0, 0.18);
+            box-shadow: 0 8px 30px rgba(255, 149, 0, 0.08);
+        }
+
+        .analytics-panel p {
+            margin-bottom: 18px;
+            color: #555;
+        }
+
+        .analytics-panel p:last-child { margin-bottom: 0; }
+
+        .read-only-badge {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 7px 14px;
+            border-radius: 999px;
+            background: white;
+            color: var(--primary-orange);
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* --- 5. 隐私政策 (严格原文还原) --- */
         #privacy {
             background-color: var(--bg-dark-footer);
             color: #d1d1d1;
@@ -269,16 +346,19 @@
             .nav-links { display: none; }
             .container { padding: 60px 20px; }
             .policy-content { padding: 25px; }
+            .analytics-panel { padding: 28px 22px; }
+            .product-tagline { min-height: auto; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">OneBoom Media</div>
+        <div class="logo">ONEBOOM MEDIA</div>
         <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#services">Services</a>
+            <a href="#services">Our Apps</a>
+            <a href="#analytics">Data Platform</a>
             <a href="#privacy">Privacy Policy</a>
             <a href="mailto:kuma@oneboom.vip" style="color:var(--primary-orange)">Contact Us</a>
         </div>
@@ -286,9 +366,9 @@
 
     <section id="home">
         <div class="container">
-            <h1>Innovative Digital Solutions</h1>
-            <p class="subtitle">Integrating product development and marketing strategy to deliver high-quality digital products and services to users worldwide.</p>
-            <a href="#services" class="cta-button">Explore Services</a>
+            <h1>Mobile Apps Built for Everyday Life</h1>
+            <p class="subtitle">ONEBOOM MEDIA LIMITED develops and operates self-developed mobile applications for users around the world.</p>
+            <a href="#services" class="cta-button">Explore Our Apps</a>
         </div>
     </section>
 
@@ -297,14 +377,14 @@
             <h2>Who We Are</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>Oneboom is an innovative internet company that integrates product development and marketing strategy. We are dedicated to delivering high-quality digital products and services to users worldwide.</p>
-                    <p>By combining exceptional product experiences with precise marketing strategies, we strive to provide maximum value to our users.</p>
-                    <p>We believe that outstanding products are built on meticulous attention to detail, and successful marketing relies on precise data insights.</p>
+                    <p>ONEBOOM MEDIA LIMITED is a mobile application developer and operator. We design, build, publish, and continuously improve our own applications for users worldwide.</p>
+                    <p>Our product portfolio focuses on practical tools for personal wellness, device organization, and everyday discovery.</p>
+                    <p>We believe that useful products are built through thoughtful design, reliable technology, and responsible analysis of authorized performance data.</p>
                 </div>
                 <div class="about-highlight">
-                    <h3>Our Team</h3>
-                    <p>Our team members come from diverse backgrounds including internet, advertising, and marketing industries, with extensive project experience and deep industry expertise.</p>
-                    <p style="margin-top:15px;">Our core team has years of experience, having led the development and promotion of several well-known products. We specialize in combining innovative thinking with data analysis to help clients achieve rapid market breakthroughs.</p>
+                    <h3>Our Focus</h3>
+                    <p>Our multidisciplinary team brings together mobile engineering, product design, data analysis, and user experience expertise.</p>
+                    <p style="margin-top:15px;">All applications featured on this website are developed and operated by our company. We use internal analytics to understand product performance and improve our own products.</p>
                 </div>
             </div>
         </div>
@@ -312,34 +392,42 @@
 
     <section id="services">
         <div class="container">
-            <h2>Our Services</h2>
+            <h2>Our Mobile Applications</h2>
+            <p class="section-intro">Three of our self-developed iPhone applications, available on the Apple App Store.</p>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>1. Product Development</h3>
-                    <ul>
-                        <li>Design and development of mobile applications (iOS / Android)</li>
-                        <li>Web application and website development</li>
-                        <li>Data analysis and system optimization</li>
-                        <li>User experience-driven product design and iteration</li>
-                    </ul>
+                    <div class="product-icon" aria-hidden="true">♥</div>
+                    <h3>AI Pulse: Heart Rate Monitor</h3>
+                    <p class="product-tagline">A personal wellness companion that helps users measure heart rate with the iPhone camera, view wellness trends, and manually record blood pressure and blood sugar readings.</p>
+                    <a class="product-link" href="https://apps.apple.com/us/app/ai-pulse-heart-rate-monitor/id6744046299" target="_blank" rel="noopener noreferrer">View on the App Store <span aria-hidden="true">↗</span></a>
                 </div>
                 <div class="service-card">
-                    <h3>2. Marketing Strategy</h3>
-                    <ul>
-                        <li>Integrated marketing strategy development</li>
-                        <li>Brand positioning and visual design</li>
-                        <li>Social media management and ad optimization</li>
-                        <li>Multi-channel promotion and growth hacking strategies</li>
-                    </ul>
+                    <div class="product-icon" aria-hidden="true">✦</div>
+                    <h3>Fast Cleanup: Storage Cleaner</h3>
+                    <p class="product-tagline">A practical storage management tool that helps users review duplicate and similar photos, find large media files, organize contacts, and free up space on their iPhone.</p>
+                    <a class="product-link" href="https://apps.apple.com/us/app/fast-cleanup-storage-cleaner/id6756760312" target="_blank" rel="noopener noreferrer">View on the App Store <span aria-hidden="true">↗</span></a>
                 </div>
                 <div class="service-card">
-                    <h3>3. App Submission Services</h3>
-                    <ul>
-                        <li>Guidance and technical support for iOS App Store submission</li>
-                        <li>Optimization for Google Play submission</li>
-                        <li>App marketplace promotion strategies and execution</li>
-                    </ul>
+                    <div class="product-icon" aria-hidden="true">◎</div>
+                    <h3>CoinWorth: Value Scanner</h3>
+                    <p class="product-tagline">A coin identification and collection tool that helps users scan coins, explore identifying details and estimated values, and organize their personal coin collections.</p>
+                    <a class="product-link" href="https://apps.apple.com/us/app/coinworth-value-scanner/id6760185680" target="_blank" rel="noopener noreferrer">View on the App Store <span aria-hidden="true">↗</span></a>
                 </div>
+            </div>
+            <div class="developer-link-wrap">
+                <a class="cta-button" href="https://apps.apple.com/us/developer/oneboom-media/id1805745173" target="_blank" rel="noopener noreferrer">View All OneBoom Apps</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="analytics">
+        <div class="container">
+            <h2>Internal Advertising Data Analytics</h2>
+            <div class="analytics-panel">
+                <span class="read-only-badge">Internal · Read Only</span>
+                <p>Our company is building an internal data analytics platform to retrieve reporting data from Google Ads accounts owned and operated by ONEBOOM MEDIA LIMITED for the promotion of our self-developed products.</p>
+                <p>The tool retrieves read-only data, including account and campaign information, spend, impressions, clicks, conversions, and conversion value. It consolidates this data with other authorized internal data sources for ROI reporting, performance analysis, financial reconciliation, and anomaly monitoring.</p>
+                <p>The platform is available only to authorized employees and contractors within our company. It is not available to the general public and does not create or modify Google Ads campaigns.</p>
             </div>
         </div>
     </section>
@@ -366,7 +454,8 @@
     </section>
 
     <footer>
-        <p>Oneboom Media Limited &copy; 2025 Oneboom Inc</p> </footer>
+        <p>ONEBOOM MEDIA LIMITED &copy; 2026</p>
+    </footer>
 
 </body>
 </html>
